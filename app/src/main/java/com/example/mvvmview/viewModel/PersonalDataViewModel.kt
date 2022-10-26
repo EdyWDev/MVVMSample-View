@@ -25,6 +25,7 @@ class PersonalDataViewModel @Inject constructor(
 
     fun getProperString(): String {
         var actualString = StringBuilder()
+        actualString.clear()
         if (!personalDateLDPersonalVM.value.isNullOrBlank()) {
             actualString.append("Dochód: " + personalDateLDPersonalVM.value)
         }
@@ -39,7 +40,9 @@ class PersonalDataViewModel @Inject constructor(
             actualString.append("\n" + "Stan cywilny: " + maritalStatusLDPersonalVM.value)
         }
         if (!extraData?.spousesIncome.isNullOrBlank()) {
-            actualString.append("\n" + "Dochód współmałżonka: " + spousesIncomeLDPersonalVM.value)
+            if(maritalStatusLDPersonalVM.value == "żonaty" || maritalStatusLDPersonalVM.value == "zamężna") {
+                actualString.append("\n" + "Dochód współmałżonka: " + spousesIncomeLDPersonalVM.value)
+            }
         }
         return actualString.toString()
     }
