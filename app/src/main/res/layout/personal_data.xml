@@ -1,6 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.PersonalDataActivity">
 
+    <TextView
+        android:id="@+id/income_SecondActTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        android:layout_marginTop="16dp"
+        android:text="@string/personal_data_dochod"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/income_SecondAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginStart="10dp"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toEndOf="@id/income_SecondActTW"
+        app:layout_constraintTop_toTopOf="@id/income_SecondActTW"
+        />
+    <TextView
+        android:id="@+id/typeOfContract_secondActTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/personal_data_rodzaj_umowy"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:textSize="25sp"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/income_SecondActTW"
+        />
+    <TextView
+        android:id="@+id/typeOfContract_secondAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="10dp"
+        android:textAlignment="textStart"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/typeOfContract_secondActTW"
+        app:layout_constraintTop_toBottomOf="@+id/income_SecondAct"
+        />
+    <TextView
+        android:id="@+id/contractTime_secondAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/personal_data_chceckBox"
+        android:textSize="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typeOfContract_secondAct"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/maritalStatus_secondActTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:text="@string/personal_data_maritalStatus"
+        android:textSize="25sp"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/maritalStatus_secondAct"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contractTime_secondAct" />
+
+    <TextView
+        android:id="@+id/maritalStatus_secondAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="textStart"
+        android:textSize="25sp"
+       app:layout_constraintStart_toEndOf="@id/maritalStatus_secondActTW"
+        app:layout_constraintTop_toBottomOf="@+id/contractTime_secondAct" />
+
+    <TextView
+        android:id="@+id/spousesIncome_secondActTW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/personal_data_spousesIncome"
+        android:textSize="25sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/maritalStatus_secondAct"
+        android:visibility="gone"
+        />
+    <TextView
+        android:id="@+id/spousesIncome_secondAct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="16dp"
+        android:textAlignment="textStart"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintTop_toBottomOf="@+id/maritalStatus_secondAct"
+        app:layout_constraintStart_toEndOf="@+id/spousesIncome_secondActTW"
+        />
+
+    <Button
+        android:id="@+id/send_BT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="510dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/personal_data_SendBT"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spousesIncome_secondAct" />
 </androidx.constraintlayout.widget.ConstraintLayout>

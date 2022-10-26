@@ -1,9 +1,11 @@
 package com.example.mvvmview.viewModel
 
 import android.os.Parcelable
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.parcelize.Parcelize
 import javax.inject.Inject
@@ -12,6 +14,9 @@ import javax.inject.Inject
 class EditPersonalDataViewModel @Inject constructor() : ViewModel() {
 
     val incomeLD = MutableLiveData<String>()
+    var validationMessage = MutableLiveData<String>()
+    private val _validationMessage = MutableLiveData(validationMessage.value)
+
 
     private val typeOfContractList =
         arrayOf("Wybierz:", "Umowa o pracę", "Umowa zlecenie", "Umowa o dzieło", "B2B")
@@ -65,6 +70,23 @@ class EditPersonalDataViewModel @Inject constructor() : ViewModel() {
             spousesIncome = spousesIncomeLD.value
         )
     }
+
+    fun hasValidationError(): Boolean {
+        if (incomeLD.value.isNullOrBlank()) {
+            validationMessage.value = "Uzupełnij pole: Dochód"
+            return true
+        } else if (spinnerTypeOfContractLD.value == 0) {
+            validationMessage.value = "Zaznacz pole: Rodzaj umowy"
+            return true
+        } else if (spinnerMaritalStatusLD.value == 0) {
+            validationMessage.value = "Zaznacz pole: Stan cywilny"
+            return true
+        } else if ((spinnerMaritalStatusLD.value == 3 || spinnerMaritalStatusLD.value == 4) && (spousesIncomeLD.value.isNullOrBlank())) {
+            validationMessage.value = "Uzupełnij pole: Dochód współmałżonka"
+            return true
+        } else return false
+    }
+
 }
 
 @Parcelize
@@ -75,8 +97,8 @@ data class ExtraDataConfig(
     val maritalStatus: String?,
     val spousesIncome: String?,
 
-) : Parcelable
+    ) : Parcelable
 
 object PersonalDataConst {
-    const val EXTRA_DATA = "ExtraData"
+    const val EXTRA_DATA = "ExtraData" // rozkminic po co to
 }

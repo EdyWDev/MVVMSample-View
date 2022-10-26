@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MVVMView</string>
+    <string name="personal_data_dochod">Dochód: </string>
+    <string name="personal_data_rodzaj_umowy">Rodzaj umowy: </string>
+    <string name="personal_data_chceckBox">Umowa na czas nieokreślony: Tak</string>
+    <string name="personal_data_maritalStatus">Stan cywilny: </string>
+    <string name="personal_data_spousesIncome">Dochód współmałżonka: </string>
+    <string name="personal_data_SendBT">WYŚLIJ</string>
+    <string name="edit_personal_data_INCOME">DOCHÓD:</string>
+    <string name="edit_personal_data_IncomeET">Wprowadź kwotę:</string>
+    <string name="edit_personal_data_TypeOfContract">RODZAJ UMOWY:</string>
+    <string name="edit_personal_data_TimlessContract">Umowa na czas nieokreślony</string>
+    <string name="edit_personal_data_MaritalStatus">STAN CYWILNY:</string>
+    <string name="edit_personal_data_SpousesIncome">DOCHÓD WSPÓŁMAŁŻONKA:</string>
+    <string name="edit_personal_data_HintEnterTheAmount">Wprowadź kwotę:</string>
+    <string name="edit_personal_data_NextBT">DALEJ</string>
+    <string name="edit_personal_data_wprowadzKwote_HINT">Wprowadż kwotę:</string>
 </resources>
