@@ -26,21 +26,14 @@ class PersonalDataViewModel @Inject constructor(
     fun getProperString(): String {
         var actualString = StringBuilder()
         actualString.clear()
-        if (!personalDateLDPersonalVM.value.isNullOrBlank()) {
-            actualString.append("Dochód: " + personalDateLDPersonalVM.value)
-        }
-        if (!typeOfContractLDPersonalVM.value.isNullOrBlank()) {
-            actualString.append("\n" + "Rodzaj umowy: " + typeOfContractLDPersonalVM.value!!)
-        }
+        actualString.append("Dochód: " + personalDateLDPersonalVM.value + "\n" + "Rodzaj umowy: " + typeOfContractLDPersonalVM.value!!)
         if (isTimelessContractLDPersonalVM.value == true) {
-
             actualString.append("\n" + "Umowa na czas nieokreślony: TAK")
         }
-        if (!maritalStatusLDPersonalVM.value.isNullOrBlank()) {
-            actualString.append("\n" + "Stan cywilny: " + maritalStatusLDPersonalVM.value)
-        }
+        actualString.append("\n" + "Stan cywilny: " + maritalStatusLDPersonalVM.value)
+
         if (!extraData?.spousesIncome.isNullOrBlank()) {
-            if(maritalStatusLDPersonalVM.value == "żonaty" || maritalStatusLDPersonalVM.value == "zamężna") {
+            if (maritalStatusLDPersonalVM.value == "żonaty" || maritalStatusLDPersonalVM.value == "zamężna") {
                 actualString.append("\n" + "Dochód współmałżonka: " + spousesIncomeLDPersonalVM.value)
             }
         }
